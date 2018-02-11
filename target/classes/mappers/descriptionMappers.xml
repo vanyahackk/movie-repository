@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.mycompany.mavenproject3.mappers" > 
+
+<resultMap id="testResult" type="com.mycompany.testwebproject.dao.type.TestType"> 
+<id property="id" column="id"/> 
+<result property="testStr" column="testStr"/> 
+</resultMap> 
+
+<!-- List<AnswerDTO> getAnswerByQuestion(Long idQuestion);--> 
+<select id="getStrTest" resultMap="testResult"> 
+SELECT 
+a.id, 
+a.testStr 
+FROM 
+test AS a; 
+</select> 
+
+
+</mapper>
