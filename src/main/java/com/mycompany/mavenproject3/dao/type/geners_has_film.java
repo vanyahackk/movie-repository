@@ -1,14 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.mavenproject3.dao.type;
-
-/**
- *
- * @author PC
- */
 public class geners_has_film {
+    private int id_gener;
+    private int id_film;
+
+    public int getId_gener() {
+        return id_gener;
+    }
+
+    public int getId_film() {
+        return id_film;
+    }
+
+    public void setId_gener(int id_gener) {
+        this.id_gener = id_gener;
+    }
+
+    public void setId_film(int id_film) {
+        this.id_film = id_film;
+    }
     
 }

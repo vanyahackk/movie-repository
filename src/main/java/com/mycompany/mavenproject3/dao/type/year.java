@@ -1,14 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.mycompany.mavenproject3.dao.type;
-
-/**
- *
- * @author PC
- */
 public class year {
+    private int id_year;
+    private int name_year;
+
+    public int getId_year() {
+        return id_year;
+    }
+
+    public int getName_year() {
+        return name_year;
+    }
+
+    public void setId_year(int id_year) {
+        this.id_year = id_year;
+    }
+
+    public void setName_year(int name_year) {
+        this.name_year = name_year;
+    }
     
 }
