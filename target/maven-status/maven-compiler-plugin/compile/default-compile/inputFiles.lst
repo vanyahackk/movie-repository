@@ -1,3 +1,15 @@
-D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\config\AppConfig.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\mappers\yearMappers.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\dao\type\Films.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\dao\type\Geners.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\mappers\descriptionMappers.java
 D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\config\AppInitialization.java
 D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\config\DataConfigJava.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\dao\type\Year.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\config\AppConfig.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\dao\type\Description.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\dao\type\Geners_has_film.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\mappers\reviewsMappers.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\mappers\filmsMappers.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\dao\type\Reviews.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\mappers\genersHasFilmMappers.java
+D:\Documents\mavenproject3\src\main\java\com\mycompany\mavenproject3\mappers\genersMappers.java

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.mycompany.mavenproject3.mappers" > 
+    <resultMap id="Geners_has_film" type="com.mycompany.mavenproject3.dao.type.Geners_has_film"> 
+<id property="id" column="id"/> 
+<result property="Geners_has_film" column="testStr"/> 
+</resultMap> 
+<select id="getGeners_has_filmById" parameterType="java.lang.Long" resultMap="Films"> 
+SELECT 
+ec.id_geners,
+ec.id_films 
+FROM 
+films AS ec;
+WHERE 
+    id_films = #{id}
+    id_geners = #{id_geners}
+</select> 
+<select id="getAll" resultMap="Geners_has_film"> 
+SELECT 
+ec.id_geners,
+ec.id_films     
+FROM 
+films AS ec; 
+</select> 
+<insert id="insertFilms" parameterType="com.mycompany.mavenproject3.dao.type.Geners_has_film"> 
+INSERT INTO 
+Geners_has_film(id_geners,id_films) 
+Values 
+(#{id_geners},
+#{id_films)
+ </insert> 
+ <update id="Geners_has_filmById" parameterType="com.mycompany.mavenproject3.dao.type.Geners_has_film" resultMap="testResult"> 
+UPDATE 
+Geners_has_film
+SET  
+id_films = #{id_films}, 
+     id_geners = #{id_geners},
+WHERE 
+id_films = #{id_films} 
+</update> 

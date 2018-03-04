@@ -5,19 +5,44 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.mycompany.mavenproject3.mappers" > 
 
-<resultMap id="testResult" type="com.mycompany.testwebproject.dao.type.TestType"> 
+<resultMap id="description" type="com.mycompany.mavenproject3.dao.type.description"> 
 <id property="id" column="id"/> 
-<result property="testStr" column="testStr"/> 
+<result property="description" column="testStr"/> 
 </resultMap> 
 
-<!-- List<AnswerDTO> getAnswerByQuestion(Long idQuestion);--> 
-<select id="getStrTest" resultMap="testResult"> 
+<select id="getdescriptionById" parameterType="java.lang.Long" resultMap="description"> 
 SELECT 
-a.id, 
-a.testStr 
+ec.id,
+ec.description 
 FROM 
-test AS a; 
+description AS ec; 
 </select> 
-
-
-</mapper>
+<select id="getAll" resultMap="description"> 
+SELECT 
+ec.id,
+ec.description     
+FROM 
+description AS ec; 
+</select> 
+<insert id="insertdescription" parameterType="com.mycompany.mavenproject3.dao.type.Description"> 
+INSERT INTO 
+description(id) 
+Values 
+(#{id})
+ </insert> 
+<update id="updateid_description" parameterType="com.mycompany.mavenproject3.dao.type.Description" resultMap="description"> 
+UPDATE 
+description
+SET 
+id = #{id}
+description = #{description} 
+WHERE 
+id = #{id} 
+description = #{description} 
+</update> 
+<delete id="deleteDescriptionById" parameterType="com.mycompany.mavenproject3.dao.type.Description" resultMap="description"> 
+DELETE FROM 
+description
+WHERE 
+description.id = #{id} 
+</delete>

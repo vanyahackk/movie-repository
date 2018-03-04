@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<mapper namespace="com.mycompany.mavenproject3.mappers" > 
 
-<root>
-    
-</root>
+<resultMap id="Films" type="com.mycompany.mavenproject3.dao.type.films"> 
+<id property="id" column="id"/> 
+<result property="Films" column="testStr"/> 
+</resultMap> 
+<select id="getFilmsById" parameterType="java.lang.Long" resultMap="Films"> 
+SELECT 
+ec.id,
+ec.name_films 
+FROM 
+films AS ec;
+WHERE 
+    id = #{id}
+</select> 
+<select id="getAll" resultMap="Films"> 
+SELECT 
+ec.id,
+ec.name_films     
+FROM 
+films AS ec; 
+</select> 
+<insert> id="insertFilms" parameterType="com.mycompany.mavenproject3.dao.type.Films"> 
+INSERT INTO 
+Films(id,name_films) 
+Values 
+(#{id},
+#{name_films)
+ </insert> 
+ <update id="FilmsById" parameterType="com.mycompany.mavenproject3.dao.type.Films" resultMap="testResult"> 
+UPDATE 
+Films 
+SET  
+name_films = #{name_films}, 
+WHERE 
+id = #{id} 
+</update> 
+<delete id="deleteFilmsById" parameterType="com.mycompany.mavenproject3.dao.type.Films" resultMap="testResult"> 
+DELETE FROM 
+Films
+WHERE 
+Films.id = #{id} 
+</delete>
