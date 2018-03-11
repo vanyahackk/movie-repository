@@ -1,15 +1,7 @@
 package com.mycompany.mavenproject3.dao.type;
 public class Description {
  private String Description;
-
-    public void setDescription(String description) {
-        this.Description = description;
-    }
-
-    public String getDescription() {
-        return Description;
-    }
- private int id;
+private int id;
 
     public int getId() {
         return id;
@@ -18,5 +10,11 @@ public class Description {
     public void setId(int id) {
         this.id = id;
     }
- 
+  public void setDescription(String description) {
+        this.Description = description;
+    }
+
+    public String getDescription() {
+        return Description;
+    }
 }

@@ -1,11 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.mycompany.mavenproject3.mappers" > 
+    <resultMap id="Geners_has_film" type="com.mycompany.mavenproject3.dao.type.Geners"> 
+<id property="id" column="id"/> 
+<result property="Geners" column="testStr"/> 
+</resultMap> 
 
 
-<root>
+<select id="getGenersById" parameterType="java.lang.Long" resultMap="Geners"> 
+SELECT 
+ec.id_geners,
+ec.name 
+FROM 
+films AS ec;
+WHERE 
+name = #{name}
+id_geners = #{id_geners}
+</select> 
+
+
+<select id="getAll" resultMap="Geners"> 
+SELECT 
+ec.id_geners,
+ec.name     
+FROM 
+films AS ec;    
+</select>
+
+  
+<insert id="insertGeners" parameterType="com.mycompany.mavenproject3.dao.type.Geners"> 
+INSERT INTO 
+Geners_has_film(id_geners,name) 
+Values 
+(#{id_geners},
+#{name})
+ </insert> 
+ 
+ 
+ <update id="GenersById" parameterType="com.mycompany.mavenproject3.dao.type.Geners" resultMap="Geners"> 
+UPDATE 
+Geners
+SET  
+name = #{name}, 
+id_geners = #{id_geners},
+WHERE 
+id_films = #{id_films}
+name = #{name} 
+</update> 
+
+
+<delete id="deleteGenersById" parameterType="com.mycompany.mavenproject3.dao.type.Geners" resultMap="Geners"> 
+DELETE FROM 
+Geners
+WHERE 
+Geners.id_geners = #{id_geners} 
+    Geners.name = #{name}
     
-</root>
+</delete>
+</mapper> 

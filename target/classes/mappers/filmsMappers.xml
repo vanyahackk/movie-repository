@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
 
 <mapper namespace="com.mycompany.mavenproject3.mappers" > 
 
 <resultMap id="Films" type="com.mycompany.mavenproject3.dao.type.films"> 
 <id property="id" column="id"/> 
 <result property="Films" column="testStr"/> 
-</resultMap> 
+</resultMap>
+
+  
 <select id="getFilmsById" parameterType="java.lang.Long" resultMap="Films"> 
 SELECT 
 ec.id,
@@ -13,8 +18,11 @@ ec.name_films
 FROM 
 films AS ec;
 WHERE 
-    id = #{id}
+    id = #{id},
+    name_films = #{name_films}
 </select> 
+
+
 <select id="getAll" resultMap="Films"> 
 SELECT 
 ec.id,
@@ -22,6 +30,8 @@ ec.name_films
 FROM 
 films AS ec; 
 </select> 
+
+
 <insert> id="insertFilms" parameterType="com.mycompany.mavenproject3.dao.type.Films"> 
 INSERT INTO 
 Films(id,name_films) 
@@ -29,17 +39,24 @@ Values
 (#{id},
 #{name_films)
  </insert> 
- <update id="FilmsById" parameterType="com.mycompany.mavenproject3.dao.type.Films" resultMap="testResult"> 
+ 
+ 
+ <update id="FilmsById" parameterType="com.mycompany.mavenproject3.dao.type.Films" resultMap="Films"> 
 UPDATE 
 Films 
 SET  
 name_films = #{name_films}, 
+id = #{id},
 WHERE 
-id = #{id} 
+id = #{id},
+name_films = #{name_films}  
 </update> 
-<delete id="deleteFilmsById" parameterType="com.mycompany.mavenproject3.dao.type.Films" resultMap="testResult"> 
+
+
+<delete id="deleteFilmsById" parameterType="com.mycompany.mavenproject3.dao.type.Films" resultMap="Films"> 
 DELETE FROM 
 Films
 WHERE 
 Films.id = #{id} 
 </delete>
+</mapper> 

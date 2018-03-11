@@ -16,7 +16,12 @@ ec.id,
 ec.description 
 FROM 
 description AS ec; 
+    WHERE
+    id = {#id},
+    description = {#description}
 </select> 
+
+
 <select id="getAll" resultMap="description"> 
 SELECT 
 ec.id,
@@ -24,12 +29,19 @@ ec.description
 FROM 
 description AS ec; 
 </select> 
+
+
 <insert id="insertdescription" parameterType="com.mycompany.mavenproject3.dao.type.Description"> 
 INSERT INTO 
-description(id) 
+description(id,description) 
+
 Values 
-(#{id})
+(#{id},
+    #{description})
+    
  </insert> 
+ 
+ 
 <update id="updateid_description" parameterType="com.mycompany.mavenproject3.dao.type.Description" resultMap="description"> 
 UPDATE 
 description
@@ -40,9 +52,12 @@ WHERE
 id = #{id} 
 description = #{description} 
 </update> 
+
+
 <delete id="deleteDescriptionById" parameterType="com.mycompany.mavenproject3.dao.type.Description" resultMap="description"> 
 DELETE FROM 
 description
 WHERE 
 description.id = #{id} 
 </delete>
+</mapper> 
