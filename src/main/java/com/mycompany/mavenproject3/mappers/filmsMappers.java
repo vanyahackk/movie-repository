@@ -16,6 +16,11 @@ public void update(Films id);
 /** Удаляет запись об объекте из базы данных 
 * @param id */ 
 public void deleteid_films(Films id); 
+       /**
+* @param id 
+* @return */ 
+public Films insert(Films id);
+
 
 /** Возвращает список объектов соответствующих всем записям в базе данных 
 * @return */ 

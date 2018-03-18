@@ -31,6 +31,12 @@ public void deleteid_gener(Geners_has_film id);
 
         /** Удаляет запись об объекте из базы данных 
         * @param id */ 
+        
+                
+              /**
+* @param id 
+* @return */ 
+public Geners_has_film insert(Films id);
             public void deleteid_films(Geners_has_film id); 
             /** Возвращает список объектов соответствующих всем записям в базе данных 
             * @return */ 
