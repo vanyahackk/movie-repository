@@ -12,7 +12,7 @@ import java.util.List;
 @Transactional
 
 
-public abstract class DescriptionServiceimpl implements DescriptionService{
+public  class DescriptionServiceimpl implements DescriptionService{
    
 
       @Autowired

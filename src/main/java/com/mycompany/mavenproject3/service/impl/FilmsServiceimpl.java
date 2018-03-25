@@ -1,19 +1,21 @@
 
 package com.mycompany.mavenproject3.service.impl;
 
-import com.mycompany.mavenproject3.dao.type.Description;
 import com.mycompany.mavenproject3.dao.type.Films;
-import com.mycompany.mavenproject3.mappers.descriptionMappers;
 import com.mycompany.mavenproject3.mappers.filmsMappers;
 import com.mycompany.mavenproject3.service.interfaces.FilmsService;
 import java.util.List;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+@Service
+@Transactional
 
 /**
  *
  * @author PC
  */
-public abstract  class FilmsServiceimpl implements FilmsService {
+public  class FilmsServiceimpl implements FilmsService {
       @Autowired
     filmsMappers ggg;
       

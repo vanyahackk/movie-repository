@@ -19,5 +19,13 @@ public void deleteid_geners(Geners id);
 
 /** Возвращает список объектов соответствующих всем записям в базе данных 
 * @return */ 
-public List<Geners> getAll();    
+public List<Geners> getAll(); 
+
+        /**
+         *
+         * @param id
+         * @return
+         */
+        public Geners insert(Geners id);
+
 }

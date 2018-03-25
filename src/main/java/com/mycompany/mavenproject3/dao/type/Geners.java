@@ -3,19 +3,35 @@ public class Geners {
    private int id_geners;
    private String name;
 
-    public int getId_geners() {
+    /**
+     *
+     * @return
+     */
+    public int getid_geners() {
         return id_geners;
     }
 
-    public String getName() {
+    /**
+     *
+     * @return
+     */
+    public String getname() {
         return name;
     }
 
-    public void setId_geners(int id_geners) {
+    /**
+     *
+     * @param id_geners
+     */
+    public void setid_geners(int id_geners) {
         this.id_geners = id_geners;
     }
 
-    public void setName(String name) {
+    /**
+     *
+     * @param name
+     */
+    public void setname(String name) {
         this.name = name;
     }
    

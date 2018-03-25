@@ -3,11 +3,15 @@ public class Description {
  private String Description;
 private int id;
 
-    public int getId() {
+    /**
+     *
+     * @return
+     */
+    public int getid() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setid(int id) {
         this.id = id;
     }
   public void setDescription(String description) {
@@ -17,4 +21,19 @@ private int id;
     public String getDescription() {
         return Description;
     }
+     public Description insert(Description id){
+     return null;
+ 
+     
+         
+     }
+     
+    /**
+     *
+     * @param id
+     */
+    public void deleteid(Description id){
+    } 
+         
+     
 }

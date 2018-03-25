@@ -13,19 +13,24 @@ public class Films {
  private int id_films;
  private String name_films;
 
-    public int getId_films() {
+    public int getid_films() {
         return id_films;
     }
 
-    public String getName() {
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public String getname_films(Films id) {
         return name_films;
     }
 
-    public void setId_films(int id_films) {
+    public void setid_films(int id_films) {
         this.id_films = id_films;
     }
 
-    public void setName(String name) {
+    public void setname_films(String name) {
         this.name_films = name;
     }
  

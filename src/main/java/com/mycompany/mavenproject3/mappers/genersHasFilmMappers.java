@@ -12,7 +12,8 @@ public interface genersHasFilmMappers {
 public Geners_has_film  getid_gener( Long id); 
 
 /** Сохраняет состояние объекта group в базе данных 
-* @param id */ 
+* @param id 
+* return */
 public void update(Geners_has_film id); 
 
 /** Удаляет запись об объекте из базы данных 
@@ -37,10 +38,14 @@ public void deleteid_gener(Geners_has_film id);
 * @param id 
 * @return */ 
 public Geners_has_film insert(Films id);
+
+
             public void deleteid_films(Geners_has_film id); 
             /** Возвращает список объектов соответствующих всем записям в базе данных 
             * @return */ 
                 public List<Geners_has_film> getAll();  
+
+    public Geners_has_film insert(Geners_has_film id);
 
 
 }
