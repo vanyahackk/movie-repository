@@ -7,7 +7,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <id property="id" column="id"/> 
 <result property="Geners_has_film" column="testStr"/> 
 </resultMap> 
-<select id="getGeners_has_filmById" parameterType="java.lang.Long" resultMap="Films"> 
+
+
+<select id="getGeners_has_filmById" parameterType="java.lang.Long" resultMap="Geners_has_film"> 
 SELECT 
 ec.id_geners,
 ec.id_films 
@@ -17,6 +19,8 @@ WHERE
     id_films = #{id}
     id_geners = #{id_geners}
 </select> 
+
+
 <select id="getAll" resultMap="Geners_has_film"> 
 SELECT 
 ec.id_geners,
@@ -24,6 +28,8 @@ ec.id_films
 FROM 
 films AS ec; 
 </select> 
+
+
 <insert id="insertFilms" parameterType="com.mycompany.mavenproject3.dao.type.Geners_has_film"> 
 INSERT INTO 
 Geners_has_film(id_geners,id_films) 
@@ -31,12 +37,24 @@ Values
 (#{id_geners},
 #{id_films)
  </insert> 
- <update id="Geners_has_filmById" parameterType="com.mycompany.mavenproject3.dao.type.Geners_has_film" resultMap="testResult"> 
+ 
+ 
+ <update id="Geners_has_filmById" parameterType="com.mycompany.mavenproject3.dao.type.Geners_has_film" resultMap="Geners_has_film"> 
 UPDATE 
 Geners_has_film
 SET  
 id_films = #{id_films}, 
      id_geners = #{id_geners},
 WHERE 
-id_films = #{id_films} 
-</update> 
+id_films = #{id_films},
+     id_geners = #{id_geners}
+</update>
+
+  
+<delete id="deleteGeners_has_filmById" parameterType="com.mycompany.mavenproject3.dao.type.Geners_has_film" resultMap="Geners_has_film"> 
+DELETE FROM 
+Geners_has_film
+WHERE 
+Geners_has_film.id_films = #{id_films} 
+</delete>
+</mapper> 

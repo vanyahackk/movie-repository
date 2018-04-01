@@ -14,17 +14,18 @@ public class YearServiceimpl implements YearService {
     
       @Autowired
      yearMappers www;
+      
      @Override
-    public void getid_year(Long id) {
-        www.getid_year(id);
+    public Year getid_year(Long id) {
+      return  www.getid_year(id);
     }
     
     
 
     @Override
-    public void update(Year id) {
+    public void update(Year year) {
             try{ 
-                www.update(id); 
+                www.update(year); 
                 } 
                 catch(Exception exception){ 
                 System.out.println("error : " + exception); 
@@ -49,8 +50,8 @@ public class YearServiceimpl implements YearService {
 } 
     
      @Override
-     public Year insert(Year id){
-        return www.insert(id); 
+     public Year insert(Year year){
+        return www.insert(year); 
        
     }
 }

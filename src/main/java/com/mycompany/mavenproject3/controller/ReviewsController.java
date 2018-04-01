@@ -1,7 +1,10 @@
 package com.mycompany.mavenproject3.controller;
 import com.mycompany.mavenproject3.dao.type.Reviews; 
+import com.mycompany.mavenproject3.service.interfaces.ReviewsService;
 import java.util.List; 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,31 +12,34 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/getReviews") 
 public class ReviewsController {
+     @Autowired
+     ReviewsService xxx;
 @RequestMapping(value="/", method = RequestMethod.GET) 
 public List<Reviews> getAll(){ 
 return null; 
 }
 @RequestMapping
-        (value="getReviewsById/idFilms",method = RequestMethod.GET) 
-public Reviews getReviewsById(
-        @RequestParam(value = "idReviews",required = false,defaultValue = "0") int id){ 
-return null; 
+        (value="getid_reviews/idReviews",method = RequestMethod.GET) 
+public Reviews getid_reviews(
+        @RequestParam(value = "idReviews",required = false,defaultValue = "0") Long id){ 
+return xxx.getid_reviews(id); 
 } 
 
-@RequestMapping(path = "/insertReviewsById/insertId",method = RequestMethod.POST) 
-public Reviews insertReviewsById(@PathVariable("insertId") 
-        Integer insertId){ 
-return null; 
+@RequestMapping(path = "/insert/insertId",method = RequestMethod.POST) 
+public Reviews insert(@RequestBody 
+        Reviews rewiews){ 
+return xxx.insert(rewiews); 
 } 
 
-@RequestMapping(path = "/updateReviewsById/updateId",method = RequestMethod.PUT) 
-public Reviews updateReviewsById(@PathVariable("updateId") 
-        Integer updateId){ 
-return null; 
+@RequestMapping(path = "/update/updateId",method = RequestMethod.PUT) 
+public void update(@RequestBody 
+        Reviews rewiews
+        ){ 
+ xxx.update(rewiews); 
 } 
 
-@RequestMapping(path="/deleteReviewsById/deleteId" , method = RequestMethod.DELETE) 
-public Reviews ReviewsId( @PathVariable("deleteId") Integer deleteId ){ 
-return null; 
+@RequestMapping(path="/deleteid_reviews/deleteId" , method = RequestMethod.DELETE) 
+public void deleteid_reviews( @PathVariable("deleteId") Reviews id ){ 
+xxx.deleteid_reviews(id); 
 }
 }

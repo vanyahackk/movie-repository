@@ -23,14 +23,14 @@ public  class DescriptionServiceimpl implements DescriptionService{
          rrr.getid(id); 
     }
     @Override 
-public Description insert(Description id) { 
-return rrr.insert(id);      
+public Description insert(Description description) { 
+return rrr.insert(description);      
 }
 
     @Override 
-public void update(Description id) { 
+public void update(Description description) { 
     try{ 
-rrr.update(id); 
+rrr.update(description); 
 } 
 catch(Exception exception){ 
 System.out.println("error : " + exception); 

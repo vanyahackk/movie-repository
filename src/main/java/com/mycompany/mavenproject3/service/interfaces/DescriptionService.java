@@ -10,8 +10,8 @@ public interface DescriptionService {
  public  void getid(Long id); 
 
 /** Сохраняет состояние объекта group в базе данных 
-* @param id */ 
-public void update(Description id); 
+* @param description */ 
+public void update(Description description); 
 
 /** Удаляет запись об объекте из базы данных 
 * @param id */ 
@@ -23,9 +23,9 @@ public List<Description> getAll();
 
     /**
      *
-     * @param id
+     * @param description
      * @return
      */
-    public Description insert(Description id);
+    public Description insert(Description description);
 }
     

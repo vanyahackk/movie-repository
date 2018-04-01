@@ -16,16 +16,17 @@ public class ReviewsServiceimpl implements ReviewsService{
     reviewsMappers ert;
 
     @Override
-    public void getid_reviews(Long id) {
-        ert.getid_reviews(id);
+    public Reviews getid_reviews(Long id) {
+      return ert.getid_reviews(id);
+          
     }
     
     
 
     @Override
-    public void update(Reviews id) {
+    public void update(Reviews reviews) {
             try{ 
-                ert.update(id); 
+                ert.update(reviews); 
                 } 
                 catch(Exception exception){ 
                 System.out.println("error : " + exception); 
@@ -50,8 +51,8 @@ public class ReviewsServiceimpl implements ReviewsService{
 } 
     
      @Override
-    public Reviews insert(Reviews id) {
-        return ert.insert(id); 
+    public Reviews insert(Reviews reviews) {
+        return ert.insert(reviews); 
        
     }
     }

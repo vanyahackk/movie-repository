@@ -5,12 +5,13 @@ import java.util.List;
 
 public interface reviewsMappers {
 /** Возвращает объект соответствующий записи с первичным ключом key или null 
-* @param id */ 
-public void getid_reviews(Long id); 
+* @param id 
+     * @return  */ 
+public Reviews getid_reviews(Long id); 
 
 /** Сохраняет состояние объекта group в базе данных 
-* @param id */ 
-public void update(Reviews id); 
+* @param reviews */ 
+public void update(Reviews reviews); 
 
 /** Удаляет запись об объекте из базы данных 
 * @param id */ 
@@ -22,8 +23,8 @@ public List<Reviews> getAll();
 
     /**
      *
-     * @param id
+     * @param reviews
      * @return
      */
-    public Reviews insert(Reviews id);
+    public Reviews insert(Reviews reviews);
 }

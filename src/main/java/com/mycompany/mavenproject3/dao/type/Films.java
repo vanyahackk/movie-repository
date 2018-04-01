@@ -13,8 +13,8 @@ public class Films {
  private int id_films;
  private String name_films;
 
-    public int getid_films() {
-        return id_films;
+    public Films getid_films(Films id) {
+        return id;
     }
 
     /**

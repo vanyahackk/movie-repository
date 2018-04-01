@@ -5,12 +5,13 @@ import java.util.List;
 
 public interface yearMappers {
  /** Возвращает объект соответствующий записи с первичным ключом key или null 
-* @param id */ 
-public void getid_year(Long id); 
+* @param id 
+     * @return  */ 
+public Year getid_year(Long id); 
 
 /** Сохраняет состояние объекта group в базе данных 
-* @param id */ 
-public void update(Year id); 
+* @param year */ 
+public void update(Year year); 
 
 /** Удаляет запись об объекте из базы данных 
 * @param id */ 
@@ -22,8 +23,8 @@ public List<Year> getAll();
 
     /**
      *
-     * @param id
+     * @param year
      * @return
      */
-    public Year insert(Year id);
+    public Year insert(Year year);
 }

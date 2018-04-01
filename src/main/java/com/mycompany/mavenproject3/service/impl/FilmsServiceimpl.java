@@ -28,9 +28,9 @@ public  class FilmsServiceimpl implements FilmsService {
     }
 
     @Override
-    public void update(Films id) {
+    public void update(Films films) {
          try{ 
-ggg.update(id); 
+ggg.update(films); 
 } 
 catch(Exception exception){ 
 System.out.println("error : " + exception); 
@@ -48,8 +48,8 @@ System.out.println("error : " + exception);
     }
 
     @Override
-    public Films insert(Films id) {
-        return ggg.insert(id);    
+    public Films insert(Films films) {
+        return ggg.insert(films);    
     }
     @Override 
 public List<Films> getAll() { 

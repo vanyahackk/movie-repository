@@ -21,8 +21,14 @@ private int id;
     public String getDescription() {
         return Description;
     }
-     public Description insert(Description id){
-     return null;
+
+    /**
+     *
+     * @param description
+     * @return
+     */
+    public Description insert(Description description){
+     return description;
  
      
          
@@ -30,6 +36,8 @@ private int id;
      
     /**
      *
+}
+
      * @param id
      */
     public void deleteid(Description id){

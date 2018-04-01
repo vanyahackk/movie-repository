@@ -10,8 +10,8 @@ public interface genersMappers {
 public Geners getid_geners(Long id); 
 
 /** Сохраняет состояние объекта group в базе данных 
-* @param id */ 
-public void update(Geners id); 
+* @param geners */ 
+public void update(Geners geners); 
 
 /** Удаляет запись об объекте из базы данных 
 * @param id */ 
@@ -23,9 +23,9 @@ public List<Geners> getAll();
 
         /**
          *
-         * @param id
+         * @param geners
          * @return
          */
-        public Geners insert(Geners id);
+        public Geners insert(Geners geners);
 
 }

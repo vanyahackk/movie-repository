@@ -1,7 +1,10 @@
 package com.mycompany.mavenproject3.controller;
 import com.mycompany.mavenproject3.dao.type.Films; 
+import com.mycompany.mavenproject3.service.interfaces.FilmsService;
 import java.util.List; 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,32 +12,37 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/getFilms")    
 public class FilmsController {
+         @Autowired
+    FilmsService rrr;
     @RequestMapping(value="/", method = RequestMethod.GET) 
 public List<Films> getAll(){ 
 return null; 
 }
 @RequestMapping
-        (value="getFilmsById/idFilms",method = RequestMethod.GET) 
-public Films getFilmsById(
-        @RequestParam(value = "idFilms",required = false,defaultValue = "0") int id){ 
-return null; 
+        (value="getid_films/id_films",method = RequestMethod.GET) 
+public Films getid_films(
+        @RequestParam(value = "id_films",required = false,defaultValue = "0") Long id){ 
+return rrr.getid_films(id); 
 } 
 
-@RequestMapping(path = "/insertFilmsById/insertId",method = RequestMethod.POST) 
-public Films insertFilmsById(@PathVariable("insertId") 
-        Integer insertId){ 
-return null; 
+@RequestMapping(path = "/insert/insertId",method = RequestMethod.POST) 
+public Films insert(@RequestBody Films films 
+         ){ 
+return rrr.insert(films); 
+             
+             
 } 
 
-@RequestMapping(path = "/updateFilmsById/updateId",method = RequestMethod.PUT) 
-public Films updateFilmsById(@PathVariable("updateId") 
-        Integer updateId){ 
-return null; 
+@RequestMapping(path = "/update/updateId",method = RequestMethod.PUT) 
+public void update(@RequestBody Films films  
+         ){ 
+ rrr.update(films); 
+             
 } 
 
-@RequestMapping(path="/deleteFilmsById/deleteId" , method = RequestMethod.DELETE) 
-public Films FilmsById( @PathVariable("deleteId") Integer deleteId ){ 
-return null; 
+@RequestMapping(path="/deleteid_films/deleteId" , method = RequestMethod.DELETE) 
+public void deleteid_films( @PathVariable("deleteId") Films id ){ 
+rrr.deleteid_films(id); 
 }
 }
 

@@ -28,18 +28,31 @@ public  class Geners_has_filmServiceimpl implements Geners_has_filmService {
           
     }
 
+    
+    
+    
     @Override
-    public void update(Geners_has_film id) {
+    public void update(Geners_has_film geners_has_film) {
          try{ 
-eee.update(id); 
+eee.update(geners_has_film); 
 } 
 catch(Exception exception){ 
 System.out.println("error : " + exception); 
 }    
     }
-
+        @Override
+    public void update(Films films) {
+         try{ 
+eee.update(films); 
+} 
+catch(Exception exception){ 
+System.out.println("error : " + exception); 
+}  
+    }  
+    
+    
     @Override
-    public void deleteid_films(Geners_has_film id) {
+    public void deleteid_films(Films id) {
           try{ 
 eee.deleteid_films(id); 
 } 
@@ -50,27 +63,32 @@ System.out.println("error : " + exception);
         @Override
     public void deleteid_gener(Geners_has_film id) {
           try{ 
-eee.deleteid_films(id); 
-} 
-    
+eee.deleteid_gener(id); 
+}   
 catch(Exception exception){ 
 System.out.println("error : " + exception); 
 } 
     }
 
     @Override
-    public  Geners_has_film insert(Geners_has_film id) {
-        return eee.insert(id);    
+    public  Geners_has_film insert(Geners_has_film geners_has_film) {
+        return eee.insert(geners_has_film);    
+    }
+    
+            @Override
+    public  Geners_has_film insert(Films films) {
+        return eee.insert(films);    
     }
     @Override 
 public List<Geners_has_film> getAll() { 
 return eee.getAll(); 
 } 
 
-    @Override
-    public void update(Films id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+  
     }
+    
+
+
 
     
-}
+

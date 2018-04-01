@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+<mapper namespace="com.mycompany.mavenproject3.mappers" > 
+    <resultMap id="Reviews" type="com.mycompany.mavenproject3.dao.type.Reviews"> 
+<id property="id" column="id"/> 
+<result property="Reviews" column="testStr"/> 
+</resultMap> 
 
 
-<root>
-    
-</root>
+<select id="getReviewsById" parameterType="java.lang.Long" resultMap="Reviews"> 
+SELECT 
+ec.id_reviews,
+ec.id_films,
+ec.bad_good    
+FROM 
+films AS ec;
+WHERE 
+id_films = #{id_films}
+id_reviews = #{id_reviews}
+bad_good = #{bad_good}
+</select> 
+<select id="getAll" resultMap="Reviews"> 
+SELECT 
+ec.id_reviews,
+ec.id_films,
+ec.bad_good    
+FROM 
+films AS ec; 
+</select> 
+
+
+<insert id="insertReviews" parameterType="com.mycompany.mavenproject3.dao.type.Reviews"> 
+INSERT INTO 
+Reviews(id_reviews,id_films,bad_good) 
+Values 
+(#{id_reviews},
+#{id_films),
+#{bad_good}
+</insert> 
+
+
+<update id="ReviewsById" parameterType="com.mycompany.mavenproject3.dao.type.Reviews" resultMap="Reviews"> 
+UPDATE 
+Reviews
+SET  
+id_films = #{id_films}, 
+id_reviews = #{id_reviews},
+bad_good = #{bad_good)     
+WHERE 
+id_films = #{id_films},
+id_reviews = #{id_reviews},
+bad_good = #{bad_good) 
+</update> 
+
+
+<delete id="deleteReviewsById" parameterType="com.mycompany.mavenproject3.dao.type.Reviews" resultMap="Reviews"> 
+DELETE FROM 
+Reviews
+WHERE 
+Reviews.id_films = #{id_films}    
+</delete>
+</mapper> 
