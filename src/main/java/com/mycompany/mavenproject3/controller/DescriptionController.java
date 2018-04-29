@@ -14,33 +14,33 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/getDescription") 
 public class DescriptionController { 
      @Autowired
-    DescriptionService rrr;
+    DescriptionService desccont;
 @RequestMapping(value="/", method = RequestMethod.GET) 
 public List<Description> getAll(){ 
-return rrr.getAll(); 
+return desccont.getAll(); 
 }
 @RequestMapping
         (value="getid/idDescription",method = RequestMethod.GET) 
 public void getid(
         @RequestParam(value = "idDescription",required = false,defaultValue = "0") Long id){ 
- rrr.getid(id);
+ desccont.getid(id);
 } 
 
 @RequestMapping(path = "/insert/insertId",method = RequestMethod.POST) 
 public Description insert(@RequestBody Description description) 
         { 
-return rrr.insert(description); 
+return desccont.insert(description); 
 } 
 
 @RequestMapping(path = "/update/updateid",method = RequestMethod.PUT) 
 public void update(@RequestBody Description description) 
         { 
-rrr.update(description);
+desccont.update(description);
 } 
 
 @RequestMapping(path="/deleteid/deleteId" , method = RequestMethod.DELETE) 
 public void deleteid( @PathVariable("deleteId") Description id){ 
- rrr.deleteid(id); 
+ desccont.deleteid(id); 
          
 
 }

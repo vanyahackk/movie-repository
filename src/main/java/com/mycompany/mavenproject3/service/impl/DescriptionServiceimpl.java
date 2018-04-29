@@ -16,21 +16,21 @@ public  class DescriptionServiceimpl implements DescriptionService{
    
 
       @Autowired
-    descriptionMappers rrr;
+    descriptionMappers descr;
       
     @Override
     public void getid(Long id) {
-         rrr.getid(id); 
+         descr.getid(id); 
     }
     @Override 
 public Description insert(Description description) { 
-return rrr.insert(description);      
+return descr.insert(description);      
 }
 
     @Override 
 public void update(Description description) { 
     try{ 
-rrr.update(description); 
+descr.update(description); 
 } 
 catch(Exception exception){ 
 System.out.println("error : " + exception); 
@@ -41,7 +41,7 @@ System.out.println("error : " + exception);
 @Override 
 public void deleteid(Description id) { 
     try{ 
-rrr.deleteid(id); 
+descr.deleteid(id); 
 } 
 catch(Exception exception){ 
 System.out.println("error : " + exception); 
@@ -50,7 +50,7 @@ System.out.println("error : " + exception);
 } 
 @Override 
 public List<Description> getAll() { 
-return rrr.getAll(); 
+return descr.getAll(); 
 } 
 
     

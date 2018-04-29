@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/getGeners_has_films") 
 public class Geners_has_films {
     @Autowired
-    Geners_has_filmService rrr;
+    Geners_has_filmService gnrflm;
 @RequestMapping(value="/", method = RequestMethod.GET) 
 public List<Geners_has_film> getAll(){ 
 return null; 
@@ -23,47 +23,47 @@ return null;
         (value="getid_gener/idFilms",method = RequestMethod.GET) 
 public Geners_has_film  getid_gener(
         @RequestParam(value = "idFilms",required = false,defaultValue = "0") Long id){ 
-return rrr.getid_gener(id); 
+return gnrflm.getid_gener(id); 
 } 
 
 @RequestMapping
         (value="getid_films/idFilms",method = RequestMethod.GET) 
 public Geners_has_film getid_films(
         @RequestParam(value = "idFilms",required = false,defaultValue = "0") Long id){ 
-return rrr.getid_films(id); 
+return gnrflm.getid_films(id); 
 } 
 
 @RequestMapping(path = "/insert/insertId",method = RequestMethod.POST) 
 public Geners_has_film insert(@RequestBody  
         Films films){ 
-return rrr.insert(films); 
+return gnrflm.insert(films); 
 } 
 
 @RequestMapping(path = "/insert/insertId",method = RequestMethod.POST) 
 public Geners_has_film insert(@RequestBody Geners_has_film geners_has_film){ 
-return rrr.insert(geners_has_film); 
+return gnrflm.insert(geners_has_film); 
 } 
 
 @RequestMapping(path = "/update/updateId",method = RequestMethod.PUT) 
 public void update(@RequestBody Films films){ 
-rrr.update(films); 
+gnrflm.update(films); 
 } 
 
 @RequestMapping(path = "/update/updateId",method = RequestMethod.PUT) 
 public void update(@RequestBody Geners_has_film geners_has_film
         ){ 
-rrr.update(geners_has_film); 
+gnrflm.update(geners_has_film); 
 } 
 
 
 @RequestMapping(path="/deleteid_gener/deleteId" , method = RequestMethod.DELETE) 
 public void deleteid_gener( @PathVariable("deleteId")Geners_has_film id  ){ 
-rrr.deleteid_gener(id); 
+gnrflm.deleteid_gener(id); 
 }
 
 @RequestMapping(path="/deleteid_films/deleteId" , method = RequestMethod.DELETE) 
 public void deleteid_films( @PathVariable("deleteId")Films id  ){ 
-rrr.deleteid_films(id); 
+gnrflm.deleteid_films(id); 
 }
 }
     

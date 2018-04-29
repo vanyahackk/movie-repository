@@ -13,11 +13,11 @@ import org.springframework.stereotype.Service;
 public class YearServiceimpl implements YearService {
     
       @Autowired
-     yearMappers www;
+     yearMappers yearsrv;
       
      @Override
     public Year getid_year(Long id) {
-      return  www.getid_year(id);
+      return  yearsrv.getid_year(id);
     }
     
     
@@ -25,7 +25,7 @@ public class YearServiceimpl implements YearService {
     @Override
     public void update(Year year) {
             try{ 
-                www.update(year); 
+                yearsrv.update(year); 
                 } 
                 catch(Exception exception){ 
                 System.out.println("error : " + exception); 
@@ -36,7 +36,7 @@ public class YearServiceimpl implements YearService {
     @Override
     public void deleteid_year(Year id) {
             try{ 
-                www.deleteid_year(id); 
+                yearsrv.deleteid_year(id); 
                 } 
                 catch(Exception exception){ 
                 System.out.println("error : " + exception); 
@@ -46,12 +46,12 @@ public class YearServiceimpl implements YearService {
 
     @Override
     public List<Year> getAll() {
-        return www.getAll(); 
+        return yearsrv.getAll(); 
 } 
     
      @Override
      public Year insert(Year year){
-        return www.insert(year); 
+        return yearsrv.insert(year); 
        
     }
 }

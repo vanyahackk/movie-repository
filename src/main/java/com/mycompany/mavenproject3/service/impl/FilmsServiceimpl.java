@@ -17,20 +17,20 @@ import org.springframework.stereotype.Service;
  */
 public  class FilmsServiceimpl implements FilmsService {
       @Autowired
-    filmsMappers ggg;
+    filmsMappers filmsrv;
       
 
 
     @Override
     public Films getid_films(Long id) {
-         return  ggg.getid_films(id); 
+         return  filmsrv.getid_films(id); 
           
     }
 
     @Override
     public void update(Films films) {
          try{ 
-ggg.update(films); 
+filmsrv.update(films); 
 } 
 catch(Exception exception){ 
 System.out.println("error : " + exception); 
@@ -40,7 +40,7 @@ System.out.println("error : " + exception);
     @Override
     public void deleteid_films(Films id) {
           try{ 
-ggg.deleteid_films(id); 
+filmsrv.deleteid_films(id); 
 } 
 catch(Exception exception){ 
 System.out.println("error : " + exception); 
@@ -49,11 +49,11 @@ System.out.println("error : " + exception);
 
     @Override
     public Films insert(Films films) {
-        return ggg.insert(films);    
+        return filmsrv.insert(films);    
     }
     @Override 
 public List<Films> getAll() { 
-return ggg.getAll(); 
+return filmsrv.getAll(); 
 } 
 
     

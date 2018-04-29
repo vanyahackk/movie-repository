@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/getYear") 
 public class YearController {
     @Autowired
-    YearService qqq;
+    YearService yearcont;
 @RequestMapping(value="/", method = RequestMethod.GET) 
 public List<Year> getAll(){ 
 return null; 
@@ -22,23 +22,23 @@ return null;
         (value="getid_year/idYear",method = RequestMethod.GET) 
 public Year getid_year(
         @RequestParam(value = "idYear",required = false,defaultValue = "0") Long id){ 
-return qqq.getid_year(id); 
+return yearcont.getid_year(id); 
 } 
 
 @RequestMapping(path = "/insert/insertId",method = RequestMethod.POST) 
 public Year insert(@RequestBody  
         Year year){ 
-return qqq.insert(year); 
+return yearcont.insert(year); 
 } 
 
 @RequestMapping(path = "/update/updateId",method = RequestMethod.PUT) 
 public void update(@RequestBody  
         Year year){ 
-qqq.update(year); 
+yearcont.update(year); 
 } 
 
 @RequestMapping(path="/deleteid_year/deleteId" , method = RequestMethod.DELETE) 
 public void deleteid_year( @PathVariable("deleteId") Year id ){ 
-qqq.deleteid_year(id); 
+yearcont.deleteid_year(id); 
 }
 }

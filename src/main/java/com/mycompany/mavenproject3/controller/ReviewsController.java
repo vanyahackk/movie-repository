@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/getReviews") 
 public class ReviewsController {
      @Autowired
-     ReviewsService xxx;
+     ReviewsService revcont;
 @RequestMapping(value="/", method = RequestMethod.GET) 
 public List<Reviews> getAll(){ 
 return null; 
@@ -22,24 +22,24 @@ return null;
         (value="getid_reviews/idReviews",method = RequestMethod.GET) 
 public Reviews getid_reviews(
         @RequestParam(value = "idReviews",required = false,defaultValue = "0") Long id){ 
-return xxx.getid_reviews(id); 
+return revcont.getid_reviews(id); 
 } 
 
 @RequestMapping(path = "/insert/insertId",method = RequestMethod.POST) 
 public Reviews insert(@RequestBody 
         Reviews rewiews){ 
-return xxx.insert(rewiews); 
+return revcont.insert(rewiews); 
 } 
 
 @RequestMapping(path = "/update/updateId",method = RequestMethod.PUT) 
 public void update(@RequestBody 
         Reviews rewiews
         ){ 
- xxx.update(rewiews); 
+ revcont.update(rewiews); 
 } 
 
 @RequestMapping(path="/deleteid_reviews/deleteId" , method = RequestMethod.DELETE) 
 public void deleteid_reviews( @PathVariable("deleteId") Reviews id ){ 
-xxx.deleteid_reviews(id); 
+revcont.deleteid_reviews(id); 
 }
 }

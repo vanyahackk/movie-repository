@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/getFilms")    
 public class FilmsController {
          @Autowired
-    FilmsService rrr;
+    FilmsService filmcont;
     @RequestMapping(value="/", method = RequestMethod.GET) 
 public List<Films> getAll(){ 
 return null; 
@@ -22,13 +22,13 @@ return null;
         (value="getid_films/id_films",method = RequestMethod.GET) 
 public Films getid_films(
         @RequestParam(value = "id_films",required = false,defaultValue = "0") Long id){ 
-return rrr.getid_films(id); 
+return filmcont.getid_films(id); 
 } 
 
 @RequestMapping(path = "/insert/insertId",method = RequestMethod.POST) 
 public Films insert(@RequestBody Films films 
          ){ 
-return rrr.insert(films); 
+return filmcont.insert(films); 
              
              
 } 
@@ -36,13 +36,13 @@ return rrr.insert(films);
 @RequestMapping(path = "/update/updateId",method = RequestMethod.PUT) 
 public void update(@RequestBody Films films  
          ){ 
- rrr.update(films); 
+ filmcont.update(films); 
              
 } 
 
 @RequestMapping(path="/deleteid_films/deleteId" , method = RequestMethod.DELETE) 
 public void deleteid_films( @PathVariable("deleteId") Films id ){ 
-rrr.deleteid_films(id); 
+filmcont.deleteid_films(id); 
 }
 }
 

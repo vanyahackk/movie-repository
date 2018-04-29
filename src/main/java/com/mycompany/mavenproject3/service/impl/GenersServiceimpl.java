@@ -14,21 +14,21 @@ import org.springframework.stereotype.Service;
 
 public class GenersServiceimpl implements GenersService{
               @Autowired
-    genersMappers xxx;
+    genersMappers gnrsrv;
                             
     @Override
     public Geners getid_geners(Long id)  {
-         return xxx.getid_geners(id); 
+         return gnrsrv.getid_geners(id); 
           
     }
       @Override 
 public Geners insert(Geners geners) { 
-return xxx.insert(geners);      
+return gnrsrv.insert(geners);      
 }
     @Override
     public void update(Geners geners) {
          try{ 
-xxx.update(geners); 
+gnrsrv.update(geners); 
 } 
 catch(Exception exception){ 
 System.out.println("error : " + exception); 
@@ -38,7 +38,7 @@ System.out.println("error : " + exception);
     @Override
     public void deleteid_geners(Geners id) {
                  try{ 
-xxx.deleteid_geners(id); 
+gnrsrv.deleteid_geners(id); 
 } 
 catch(Exception exception){ 
 System.out.println("error : " + exception); 
@@ -47,7 +47,7 @@ System.out.println("error : " + exception);
 
     @Override
     public List<Geners> getAll() {
-    return xxx.getAll(); 
+    return gnrsrv.getAll(); 
 } 
     
     

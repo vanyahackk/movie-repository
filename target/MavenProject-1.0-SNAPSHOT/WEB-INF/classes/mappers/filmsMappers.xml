@@ -6,8 +6,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.mycompany.mavenproject3.mappers" > 
 
 <resultMap id="Films" type="com.mycompany.mavenproject3.dao.type.films"> 
-<id property="id" column="id"/> 
-<result property="Films" column="testStr"/> 
+<id property="id_films" column="id_films"/> 
+<result property="id_films" column="id_films"/> 
 </resultMap>
 
   
@@ -32,7 +32,7 @@ films AS ec;
 </select> 
 
 
-<insert> id="insertFilms" parameterType="com.mycompany.mavenproject3.dao.type.Films"> 
+<insert id="insertFilms" parameterType="com.mycompany.mavenproject3.dao.type.Films"> 
 INSERT INTO 
 Films(id,name_films) 
 Values 

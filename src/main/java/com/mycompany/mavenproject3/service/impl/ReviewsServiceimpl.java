@@ -13,11 +13,11 @@ import org.springframework.stereotype.Service;
 public class ReviewsServiceimpl implements ReviewsService{
     
       @Autowired
-    reviewsMappers ert;
+    reviewsMappers reviesrv;
 
     @Override
     public Reviews getid_reviews(Long id) {
-      return ert.getid_reviews(id);
+      return reviesrv.getid_reviews(id);
           
     }
     
@@ -26,7 +26,7 @@ public class ReviewsServiceimpl implements ReviewsService{
     @Override
     public void update(Reviews reviews) {
             try{ 
-                ert.update(reviews); 
+                reviesrv.update(reviews); 
                 } 
                 catch(Exception exception){ 
                 System.out.println("error : " + exception); 
@@ -37,7 +37,7 @@ public class ReviewsServiceimpl implements ReviewsService{
     @Override
     public void deleteid_reviews(Reviews id) {
             try{ 
-                ert.deleteid_reviews(id); 
+                reviesrv.deleteid_reviews(id); 
                 } 
                 catch(Exception exception){ 
                 System.out.println("error : " + exception); 
@@ -47,12 +47,12 @@ public class ReviewsServiceimpl implements ReviewsService{
 
     @Override
     public List<Reviews> getAll() {
-        return ert.getAll(); 
+        return reviesrv.getAll(); 
 } 
     
      @Override
     public Reviews insert(Reviews reviews) {
-        return ert.insert(reviews); 
+        return reviesrv.insert(reviews); 
        
     }
     }
